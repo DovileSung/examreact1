@@ -28,7 +28,7 @@ app.post("/create",async(req,res)=>{
     console.log(req.body)
     const data = new userModel(req.body)
     await data.save()
-    res.send({success : true, message : "data saved successfull", data : data})
+    res.send({success : true, message : "duomenys išsaugoti sėkmingai", data : data})
 })
 
 app.put("/update",async(req,res)=>{
@@ -37,7 +37,7 @@ app.put("/update",async(req,res)=>{
 
     console.log(rest)
     const data = await userModel.updateOne({_id : _id},rest)
-    res.send({success : true, message : "data updated successfull", data : data})
+    res.send({success : true, message : "duomenys redaguoti sėkmingai", data : data})
 })
 
 
@@ -45,7 +45,7 @@ app.delete("/delete/:id",async(req,res)=>{
     const id = req.params.id
     console.log(id)
     const data = await userModel.deleteOne({_id : id})
-    res.send({success : true, message : "data deleted successfull", data : data})
+    res.send({success : true, message : "duomenys ištrinti sėkmingai", data : data})
 })
 
 

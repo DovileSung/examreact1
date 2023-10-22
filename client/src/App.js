@@ -94,7 +94,7 @@ const handleDelete = async(id)=>{
   return (
 <>
     <div className="container">
-      <button className="btn btn-add" onClick={()=>setAddSection(true)}>Add</button>
+      <button className="btn btn-add" onClick={()=>setAddSection(true)}>Pridėti</button>
 
       {
         addSection && (
@@ -122,9 +122,9 @@ const handleDelete = async(id)=>{
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Age</th>
+        <th>Vardas</th>
+        <th>El.paštas</th>
+        <th>Amžius</th>
         <th>
           
         </th>
@@ -140,14 +140,14 @@ const handleDelete = async(id)=>{
               <td>{el.email}</td>
               <td>{el.age}</td>
               <td>
-                <button className='btn btn-edit'onClick={()=>handleEdit(el)}>Edit</button>
-                <button className='btn btn-delete' onClick={()=>handleDelete(el._id)}>Delete</button>
+                <button className='btn btn-edit'onClick={()=>handleEdit(el)}>Redaguoti</button>
+                <button className='btn btn-delete' onClick={()=>handleDelete(el._id)}>Ištrinti</button>
               </td>
             </tr>
           )
         }))
         : (
-          <p>No data</p>
+          <p>Duomenų nėra</p>
         )
       }
     </tbody>
